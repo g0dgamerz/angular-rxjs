@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { interval, Subscription } from 'rxjs';
+import { interval, Subscription, timer } from 'rxjs';
 import { DesignUtilityService } from 'src/app/appServices/design-utility.service';
 
 
@@ -13,7 +13,9 @@ export class IntervalComponent implements OnInit {
   videoSubscription!: Subscription;
   constructor(private _designUtility: DesignUtilityService) {}
   ngOnInit(): void {
-    const broadCastVideos = interval(1000);
+    //const broadCastVideos = interval(1000);
+    //timer(delay, interval)
+    const broadCastVideos = timer(5000,1000);
    this.videoSubscription = broadCastVideos.subscribe(res => {
       console.log(res);
       this.obsMsg = 'Video ' + res;
