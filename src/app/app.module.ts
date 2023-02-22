@@ -14,6 +14,7 @@ import { ListComponent } from './observable/list/list.component';
 import { FromEventComponent } from './observable/from-event/from-event.component';
 import { CardModule } from 'primeng/card';
 import { IntervalComponent } from './observable/interval/interval.component';
+import { OfFromComponent } from './observable/of-from/of-from.component';
 
 
 
@@ -26,6 +27,7 @@ import { IntervalComponent } from './observable/interval/interval.component';
     ListComponent,
     FromEventComponent,
     IntervalComponent,
+    OfFromComponent,
   ],
   imports: [
     BrowserModule,
