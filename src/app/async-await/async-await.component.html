@@ -1,0 +1,54 @@
+<div style="margin-top: 5%;">
+<p>async-await works!</p>
+</div>
+
+<strong>Ex-01 with Promise</strong>
+<hr>
+<button pButton type="button" label="Buy Laptop" (click)="fetch1()" >Buy laptop</button>
+<hr>
+<div id="result1">Datasdfsadf</div>
+
+<strong>Ex-02 with Async Await</strong>
+<hr>
+<button pButton type="button" label="Buy Laptop" (click)="fetch2()" >Buy laptop</button>
+<hr>
+<div id="result2">Data</div>
+
+<strong>Ex-03 with Fetch API</strong>
+<hr>
+<button pButton type="button" label="Buy Laptop" (click)="fetch3()" >Buy laptop</button>
+
+<hr>
+<div id="result3">Data</div>
+<script>
+  function fetch1() {
+  console.log("working");
+}
+    console.log("--------------------------------------------------")
+    console.log("--------------Async   /       Await---------------")
+    console.log("--------------------------------------------------")
+
+    let promise = new Promise((resolve,reject)=>{
+        setTimeout(()=>
+        {
+            resolve("Data received")
+        },3000);
+    })
+    //async keyword with function always return promise
+    async function getData(){
+        let response = await promise;
+        console.log(response);
+        // return 'Data Received'
+    }
+    getData().then(data=>console.log(data));
+    console.log(getData());
+
+
+    async function fetch2()
+    {
+        result2.innerText = "Fetching data";
+        let data = await buyLaptop;
+        console.log(data);
+        result2.innerText = JSON.stringify(res);
+    }
+</script>
